@@ -22,7 +22,7 @@ const mapStateToProps = (
 });
 
 export default connectWithRouter(
-  mapRouterToProps
+  mapRouterToProps,
 )(connect(
   mapStateToProps,
   {
