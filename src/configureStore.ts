@@ -6,6 +6,7 @@ import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
 import {loadState, saveState} from './localStorage';
 
 const middleware = applyMiddleware(...[].concat(
+  // @ts-ignore
   process.env.NODE_ENV !== 'production' ?
   [
     // tslint:disable-next-line:no-var-requires
@@ -25,6 +26,7 @@ const store = createStore(
 );
 
 store.subscribe(() => {
+  // @ts-ignore
   saveState(store.getState() as State.All);
 });
 

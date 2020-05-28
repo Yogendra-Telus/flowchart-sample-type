@@ -27,13 +27,18 @@ export interface BridgeProps {
   id: string;
 }
 
+
 export class Bridge extends PureComponent<BridgeProps> {
   static propTypes: {
     id: PropTypes.Validator<any>;
   };
+  // @ts-ignore
   private static defaultProps;
+  // @ts-ignore
   private overlay;
+  // @ts-ignore
   constructor(props: BridgeProps);
+  // @ts-ignore
   render(): React.ReactPortal;
 }
 
@@ -51,8 +56,11 @@ export class Portals extends PureComponent<PortalsProps> {
     id: PropTypes.Validator<any>;
     onRemoveConnection: PropTypes.Validator<any>;
   };
+  // @ts-ignore
   private static defaultProps;
+  // @ts-ignore
   constructor(props: PortalsProps);
+  // @ts-ignore
   render(): JSX.Element;
 }
 
@@ -70,9 +78,13 @@ export class Close extends PureComponent<CloseProps> {
     source: PropTypes.Requireable<any>;
     target: PropTypes.Requireable<any>;
   };
+  // @ts-ignore
   private static defaultProps;
+  // @ts-ignore
   private overlay;
+  // @ts-ignore
   render(): JSX.Element;
+  // @ts-ignore
   private handleClose;
 }
 
@@ -150,27 +162,46 @@ export class Graph extends PureComponent<GraphProps, GraphState> {
     yOffset: PropTypes.Requireable<any>;
   };
   static defaultProps: GraphProps;
+  // @ts-ignore
   state: {
     xOffset: number;
     yOffset: number;
   };
+  // @ts-ignore
   private jsPlumb;
+  // @ts-ignore
   private nodes;
+  // @ts-ignore
   constructor(props: GraphProps);
+  // @ts-ignore
   componentWillReceiveProps({scale, xOffset, yOffset}: GraphProps): void;
+  // @ts-ignore
   componentDidMount(): void;
+  // @ts-ignore
   componentDidUpdate({ connections: prevConnections }: GraphProps): void;
+  // @ts-ignore
   componentWillUnmount(): void;
+  // @ts-ignore
   render(): JSX.Element;
+  // @ts-ignore
   private handlePanAndZoom;
+  // @ts-ignore
   private handlePanEnd;
+  // @ts-ignore
   private handlePanMove;
+  // @ts-ignore
   private renderConnections;
+  // @ts-ignore
   private handleMouseDown;
+  // @ts-ignore
   private renderConnection;
+  // @ts-ignore
   private handleNewConnection;
+  // @ts-ignore
   private handleAddConnection;
+  // @ts-ignore
   private handleDetachedConnection;
+  // @ts-ignore
   private handleRemoveConnection;
 }
 
@@ -214,27 +245,47 @@ export class Node extends PureComponent<NodeProps, NodeState> {
     targetSettings: PropTypes.Requireable<any>;
     type: PropTypes.Requireable<any>;
   };
+  // @ts-ignore
   private static defaultProps;
+  // @ts-ignore
   state: {
     drag: boolean;
   };
+  // @ts-ignore
   private connectionFilter: string;
+  // @ts-ignore
   private dragFilter: string;
+  // @ts-ignore
   private timeout: NodeJS.Timer;
+  // @ts-ignore
   private style: CSSProperties;
+  // @ts-ignore
   private drop: boolean;
+  // @ts-ignore
   private node;
+  // @ts-ignore
   constructor(props: NodeProps);
+  // @ts-ignore
   componentDidMount(): void;
+  // @ts-ignore
   componentWillUnmount(): void;
+  // @ts-ignore
   render(): JSX.Element;
+  // @ts-ignore
   private handlePrevent;
+  // @ts-ignore
   private handleMouseDown;
+  // @ts-ignore
   private handleSelect;
+  // @ts-ignore
   private handleDeselect;
+  // @ts-ignore
   private addEndPoints;
+  // @ts-ignore
   private makeNodeDraggable;
+  // @ts-ignore
   private handleDrag;
+  // @ts-ignore
   private handleDrop;
 }
 
@@ -257,8 +308,11 @@ export class NodeContent extends PureComponent<NodeContentProps> {
     style: PropTypes.Requireable<any>;
     styleName: PropTypes.Requireable<any>;
   };
+  // @ts-ignore
   private static defaultProps: NodeContentProps;
+  // @ts-ignore
   render(): JSX.Element;
+  // @ts-ignore
   private handleClose;
 }
 
@@ -276,5 +330,6 @@ export class Nodes extends PureComponent<NodesProps> {
     onRender: PropTypes.Validator<any>;
     onSelect: PropTypes.Requireable<any>;
   };
+  // @ts-ignore
   render(): JSX.Element;
 }

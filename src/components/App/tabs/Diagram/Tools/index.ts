@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 import {connectWithRouter} from 'ui-router-react-digest';
 import Tools from './Tools';
 
+// @ts-ignore
 const mapRouterToProps = (router: UIRouterReact) => ({
   diagramId: router.stateService.params.id
 });
@@ -22,7 +23,9 @@ const mapStateToProps = (
 });
 
 export default connectWithRouter(
+  // @ts-ignore
   mapRouterToProps,
+  // @ts-ignore
 )(connect(
   mapStateToProps,
   {
