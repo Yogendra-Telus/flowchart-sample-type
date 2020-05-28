@@ -5,5 +5,5 @@ export interface IDebugToggleAction {
 
 export const onDebugToggle = (value?: boolean): IDebugToggleAction => ({
   type: 'DEBUG',
-  value,
+  value:false,
 });

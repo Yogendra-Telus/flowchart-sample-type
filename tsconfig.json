@@ -1,23 +1,15 @@
 {
+  "extends": "./node_modules/@digest/typescript/src/tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
+    "checkJs": false,
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "module": "esNext",
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "src"

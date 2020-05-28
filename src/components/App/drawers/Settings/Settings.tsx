@@ -12,10 +12,10 @@ export interface ISettings {
   drawerDocked: boolean;
   drawerDrag: boolean;
   drawerHover: boolean;
-  onDrawerDockedToggle: (toggle?: boolean) => any;
-  onDrawerDragToggle: (toggle?: boolean) => any;
-  onDrawerHoverToggle: (toggle?: boolean) => any;
-  onOrientationToggle: (toggle?: Orientation) => any;
+  onDrawerDockedToggle: (toggle: boolean) => any;
+  onDrawerDragToggle: (toggle: boolean) => any;
+  onDrawerHoverToggle: (toggle: boolean) => any;
+  onOrientationToggle: (toggle: Orientation) => any;
   onTabAdd: (tab: ITab) => any;
   onTabRemove: (index: number) => any;
   orientation: Orientation;
@@ -88,19 +88,19 @@ export default class Settings extends PureComponent<ISettings> {
     );
   }
 
-  private _whenDrawerDockedToggle = () => {
-    this.props.onDrawerDockedToggle();
+  private _whenDrawerDockedToggle = (t:any) => {
+    this.props.onDrawerDockedToggle(t);
   }
 
-  private _whenDrawerDragToggle = () => {
-    this.props.onDrawerDragToggle();
+  private _whenDrawerDragToggle = (t:any) => {
+    this.props.onDrawerDragToggle(t);
   }
 
-  private _whenDrawerHoverToggle = () => {
-    this.props.onDrawerHoverToggle();
+  private _whenDrawerHoverToggle = (t:any) => {
+    this.props.onDrawerHoverToggle(t);
   }
 
-  private _whenOrientationToggle = () => {
-    this.props.onOrientationToggle();
+  private _whenOrientationToggle = (t:any) => {
+    this.props.onOrientationToggle(t);
   }
 }

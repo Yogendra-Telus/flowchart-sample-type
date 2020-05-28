@@ -27,15 +27,15 @@ export interface BridgeProps {
   id: string;
 }
 
-export class Bridge extends PureComponent<BridgeProps> {
-  static propTypes: {
-    id: PropTypes.Validator<any>;
-  };
-  private static defaultProps;
-  private overlay;
-  constructor(props: BridgeProps);
-  render(): React.ReactPortal;
-}
+// export class Bridge extends PureComponent<BridgeProps> {
+//   static propTypes: {
+//     id: PropTypes.Validator<any>;
+//   };
+//   private static defaultProps;
+//   private overlay;
+//   constructor(props: BridgeProps);
+//   render(): React.ReactPortal;
+// }
 
 export interface PortalsProps {
   children: ((connId: string, source?: string, target?: string, onRemoveConnection?: onRemoveConnection) => (ReactElement<any>)) | null;
@@ -44,17 +44,17 @@ export interface PortalsProps {
   onRemoveConnection: onRemoveConnection;
 }
 
-export class Portals extends PureComponent<PortalsProps> {
-  static propTypes: {
-    children: PropTypes.Validator<any>;
-    connections: PropTypes.Validator<any>;
-    id: PropTypes.Validator<any>;
-    onRemoveConnection: PropTypes.Validator<any>;
-  };
-  private static defaultProps;
-  constructor(props: PortalsProps);
-  render(): JSX.Element;
-}
+// export class Portals extends PureComponent<PortalsProps> {
+//   static propTypes: {
+//     children: PropTypes.Validator<any>;
+//     connections: PropTypes.Validator<any>;
+//     id: PropTypes.Validator<any>;
+//     onRemoveConnection: PropTypes.Validator<any>;
+//   };
+//   private static defaultProps;
+//   constructor(props: PortalsProps);
+//   render(): JSX.Element;
+// }
 
 export interface CloseProps {
   id?: string;
@@ -63,18 +63,18 @@ export interface CloseProps {
   target?: string;
 }
 
-export class Close extends PureComponent<CloseProps> {
-  static propTypes: {
-    connId: PropTypes.Requireable<any>;
-    onClose: PropTypes.Requireable<any>;
-    source: PropTypes.Requireable<any>;
-    target: PropTypes.Requireable<any>;
-  };
-  private static defaultProps;
-  private overlay;
-  render(): JSX.Element;
-  private handleClose;
-}
+// export class Close extends PureComponent<CloseProps> {
+//   static propTypes: {
+//     connId: PropTypes.Requireable<any>;
+//     onClose: PropTypes.Requireable<any>;
+//     source: PropTypes.Requireable<any>;
+//     target: PropTypes.Requireable<any>;
+//   };
+//   private static defaultProps;
+//   private overlay;
+//   render(): JSX.Element;
+//   private handleClose;
+// }
 
 export interface Connection {
   bridge?: ((connId: string, source?: string, target?: string, onRemoveConnection?: onRemoveConnection) => (ReactElement<any>)) | false
@@ -150,28 +150,6 @@ export class Graph extends PureComponent<GraphProps, GraphState> {
     yOffset: PropTypes.Requireable<any>;
   };
   static defaultProps: GraphProps;
-  state: {
-    xOffset: number;
-    yOffset: number;
-  };
-  private jsPlumb;
-  private nodes;
-  constructor(props: GraphProps);
-  componentWillReceiveProps({scale, xOffset, yOffset}: GraphProps): void;
-  componentDidMount(): void;
-  componentDidUpdate({ connections: prevConnections }: GraphProps): void;
-  componentWillUnmount(): void;
-  render(): JSX.Element;
-  private handlePanAndZoom;
-  private handlePanEnd;
-  private handlePanMove;
-  private renderConnections;
-  private handleMouseDown;
-  private renderConnection;
-  private handleNewConnection;
-  private handleAddConnection;
-  private handleDetachedConnection;
-  private handleRemoveConnection;
 }
 
 export interface NodeProps {
@@ -214,28 +192,6 @@ export class Node extends PureComponent<NodeProps, NodeState> {
     targetSettings: PropTypes.Requireable<any>;
     type: PropTypes.Requireable<any>;
   };
-  private static defaultProps;
-  state: {
-    drag: boolean;
-  };
-  private connectionFilter: string;
-  private dragFilter: string;
-  private timeout: NodeJS.Timer;
-  private style: CSSProperties;
-  private drop: boolean;
-  private node;
-  constructor(props: NodeProps);
-  componentDidMount(): void;
-  componentWillUnmount(): void;
-  render(): JSX.Element;
-  private handlePrevent;
-  private handleMouseDown;
-  private handleSelect;
-  private handleDeselect;
-  private addEndPoints;
-  private makeNodeDraggable;
-  private handleDrag;
-  private handleDrop;
 }
 
 export interface NodeContentProps {
@@ -257,9 +213,6 @@ export class NodeContent extends PureComponent<NodeContentProps> {
     style: PropTypes.Requireable<any>;
     styleName: PropTypes.Requireable<any>;
   };
-  private static defaultProps: NodeContentProps;
-  render(): JSX.Element;
-  private handleClose;
 }
 
 export interface NodesProps {
@@ -276,5 +229,4 @@ export class Nodes extends PureComponent<NodesProps> {
     onRender: PropTypes.Validator<any>;
     onSelect: PropTypes.Requireable<any>;
   };
-  render(): JSX.Element;
 }

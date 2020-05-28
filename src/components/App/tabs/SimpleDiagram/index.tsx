@@ -134,7 +134,7 @@ export default class Diagram extends PureComponent<{}, IDiagramState> {
   )
 
   private handleClose = (nodeId: string) => {
-    if (confirm(`Remove node '${nodeId}'?`)) {
+    if (window.confirm(`Remove node '${nodeId}'?`)) {
       const {[nodeId]: omit, ...remaining} = this.state.nodes;
       this.setState({
         connections: this.state.connections.filter(connection => (
@@ -183,7 +183,7 @@ export default class Diagram extends PureComponent<{}, IDiagramState> {
   private handleRemoveConnection = (
     id: string
   ) => {
-    if (confirm(`Remove connection '${id}'?`)) {
+    if (window.confirm(`Remove connection '${id}'?`)) {
       this.setState({connections: this.state.connections.filter(connection => (
         connection.id !== id
       ))});

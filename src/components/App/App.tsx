@@ -89,7 +89,7 @@ export default class App extends PureComponent<IAppProps> {
       this._router.transitionService.onSuccess(
         {to: 'root.tabs.**'},
         (transition) => {
-          document.title = transition.targetState().state().params.title;
+          document.title = transition?.targetState()?.state()?.params?.title;
         }
       );
     }
@@ -97,8 +97,8 @@ export default class App extends PureComponent<IAppProps> {
 
   public render () {
     const tabOrder: Tabs = this.props.tabs.map((tab) => {
-      return tabs[tab.params.type] ? {
-        ...tabs[tab.params.type],
+      return tabs[tab?.params?.type] ? {
+        ...tabs[tab?.params?.type],
         ...tab
       } : {
         ...tabs.dynamic,
@@ -117,12 +117,12 @@ export default class App extends PureComponent<IAppProps> {
       <UIRouterReactDigest
         drawerDocked={this.props.drawerDocked}
         drawerDrag={this.props.drawerDrag}
-        drawerFooter={null}
+        drawerFooter={null||undefined}
         drawerHover={this.props.drawerHover}
         drawerIndex={this.props.drawerIndex}
         drawerOpen={this.props.drawerOpen}
         drawers={drawerOrder}
-        footer={null}
+        footer={null||undefined}
         onDrawerOpenToggle={this.props.onDrawerOpenToggle}
         onDrawerSelect={this.props.onDrawerSelect}
         onTabSelect={this.props.onTabSelect}
