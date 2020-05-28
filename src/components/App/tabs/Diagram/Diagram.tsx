@@ -131,7 +131,7 @@ export default class Diagram extends PureComponent<IDiagramProps, IDiagramState>
   private handleClose = (
     nodeId: string
   ) => {
-    if (confirm(`Remove node '${nodeId}'?`)) {
+    if (window.confirm(`Remove node '${nodeId}'?`)) {
       this.props.onRemoveNode(this.props.diagramId, nodeId);
     }
   }
@@ -167,7 +167,7 @@ export default class Diagram extends PureComponent<IDiagramProps, IDiagramState>
     connectionId: string,
     sourceId: string
   ) => {
-    if (confirm(`Remove connection '${connectionId}'?`)) {
+    if (window.confirm(`Remove connection '${connectionId}'?`)) {
       this.props.onRemoveConnection(sourceId, connectionId);
     }
   }
