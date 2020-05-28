@@ -73,6 +73,7 @@
     "semantic-release": "^15.9.6",
     "ui-router-react-digest": "^1.1.1",
     "uuid": "^3.3.2",
+    "webpack": "4.42.0",
     "why-did-you-update": "^0.1.1"
   },
   "scripts": {
