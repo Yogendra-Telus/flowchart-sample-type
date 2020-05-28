@@ -3,6 +3,7 @@ import React, {
   PureComponent
 } from 'react';
 import './Tools.css';
+import PropTypes, { string } from 'prop-types';
 
 export interface IToolsProps {
   onAddNode: (
@@ -18,7 +19,7 @@ export interface IToolsProps {
     diagramId: string,
     scale: number
   ) => any;
-  diagramId: string;
+  diagramId?: string;
   scale: number;
   selections: string[];
 }

@@ -1,4 +1,4 @@
-import {UIRouterReact} from '@uirouter/react';
+//import {UIRouterReact} from '@uirouter/react';
 import {
   onSetDiagramScale,
   onSetDiagramXYOffset
@@ -21,7 +21,7 @@ import Diagram from './Diagram';
 const defaultConnections: Connections = [];
 const defaultNodes: IDiagramNodes = {};
 
-const mapRouterToProps = (router: UIRouterReact) => ({
+const mapRouterToProps = (router:any) => ({
   diagramId: router.stateService.params.id
 });
 
