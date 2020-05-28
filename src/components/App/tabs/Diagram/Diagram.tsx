@@ -1,4 +1,4 @@
-import {Connections} from '../../../../indexd';
+import {Connections} from 'jsplumb-react';
 import debounce from 'lodash.debounce';
 import React, {
   PureComponent
@@ -137,16 +137,16 @@ export default class Diagram extends PureComponent<IDiagramProps, IDiagramState>
   }
 
   private handlePanEnd = (
-    xOffset: number,
-    yOffset: number
+    xOffset?: number,
+    yOffset?: number
   ) => {
-    this.props.onSetDiagramXYOffset(this.props.diagramId, xOffset, yOffset);
+    this.props.onSetDiagramXYOffset(this.props.diagramId, xOffset?xOffset:0, yOffset?yOffset:0);
   }
 
-  private handleZoom = (scale: number) => {
-    this.props.onSetDiagramScale(this.props.diagramId, scale);
+  private handleZoom = (scale?: number) => {
+    this.props.onSetDiagramScale(this.props.diagramId, scale?scale:0);
   }
-
+  
   private handleDrop = (
     id: string,
     x: number,

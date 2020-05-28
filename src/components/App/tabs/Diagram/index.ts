@@ -13,7 +13,7 @@ import {
   onRemoveConnection
 } from '../../../../actions/sources';
 import defaultState from '../../../../defaultState';
-import {Connections} from '../../../../indexd';
+import {Connections} from 'jsplumb-react';
 import {connect} from 'react-redux';
 import {connectWithRouter} from 'ui-router-react-digest';
 import Diagram from './Diagram';
